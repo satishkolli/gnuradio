@@ -1,0 +1,31 @@
+<block>
+  <name>Redis2</name>
+  <key>redis3_redis2</key>
+  <category>[REDIS3]</category>
+  <import>import redis3</import>
+  <make>redis3.redis2($msgsize, $*channelname, $len_tag_key, $redis_host)</make>
+  <param>
+    <name>Msgsize</name>
+    <key>msgsize</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>channelname</name>
+    <key>channelname</key>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Len_tag_key</name>
+    <key>len_tag_key</key>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Redis Hostname or IP</name>
+    <key>redis_host</key>
+    <type>string</type>
+  </param>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>

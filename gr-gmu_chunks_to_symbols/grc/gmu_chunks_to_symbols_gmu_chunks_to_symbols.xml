@@ -1,0 +1,74 @@
+<block>
+  <name>Gmu chunks to symbols</name>
+  <key>gmu_chunks_to_symbols_gmu_chunks_to_symbols</key>
+  <category>[GMU_CHUNKS_TO_SYMBOLS]</category>
+  <import>import gmu_chunks_to_symbols</import>
+  <make>gmu_chunks_to_symbols.gmu_chunks_to_symbols($symbol_table, $D)</make>
+  <callback>set_symbol_table($symbol_table)</callback>
+<param>
+		<name>Input Type</name>
+		<key>in_type</key>
+		<type>enum</type>
+		<option>
+			<name>Byte</name>
+			<key>byte</key>
+			<opt>fcn:b</opt>
+		</option>
+		<option>
+			<name>Int</name>
+			<key>int</key>
+			<opt>fcn:i</opt>
+		</option>
+		<option>
+			<name>Short</name>
+			<key>short</key>
+			<opt>fcn:s</opt>
+		</option>
+		
+	</param>
+<param>
+		<name>Output Type</name>
+		<key>out_type</key>
+		<type>enum</type>
+		<option>
+			<name>Complex</name>
+			<key>complex</key>
+			<opt>fcn:c</opt>
+			<opt>table:complex_vector</opt>
+		</option>
+		<option>
+			<name>Float</name>
+			<key>float</key>
+			<opt>fcn:f</opt>
+			<opt>table:real_vector</opt>
+		</option>
+	</param>
+  <param>
+		<name>Symbol Table</name>
+		<key>symbol_table</key>
+		<type>$out_type.table</type>
+	</param>
+  <param>
+    <name>D</name>
+    <key>D</key>
+    <value> 1</value>
+    <type>int</type>
+  </param>
+  <param>
+		<name>Num Ports</name>
+		<key>num_ports</key>
+		<value>1</value>
+		<type>int</type>
+	</param>
+	<check>$num_ports &gt; 0</check>
+	<sink>
+		<name>in</name>
+		<type>$in_type</type>
+		<nports>$num_ports</nports>
+	</sink>
+	<source>
+		<name>out</name>
+		<type>$out_type</type>
+		<nports>$num_ports</nports>
+	</source>
+</block>

@@ -1,0 +1,11 @@
+This is the gmu_chunks_to_symbols-write-a-block package meant as a guide to building
+out-of-tree packages. To use the gmu_chunks_to_symbols blocks, the Python namespaces
+is in 'gmu_chunks_to_symbols', which is imported as:
+
+    import gmu_chunks_to_symbols
+
+See the Doxygen documentation for details about the blocks available
+in this package. A quick listing of the details can be found in Python
+after importing by using:
+
+    help(gmu_chunks_to_symbols)

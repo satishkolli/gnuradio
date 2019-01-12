@@ -1,0 +1,33 @@
+<block>
+  <name>Add rx tag</name>
+  <key>gmu_add_rx_tag</key>
+  <category>[GMU]</category>
+  <import>import gmu</import>
+  <make>gmu.add_rx_tag($tag_name,$fft_len, $redis_host)</make>
+  <param>
+    <name>Tag_name</name>
+    <key>tag_name</key>
+    <type>string</type>
+  </param>
+  <param>
+    <name>FFT_LEN</name>
+    <key>fft_len</key>
+    <value>1</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Redis Hostname or IP</name>
+    <key>redis_host</key>
+    <type>string</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+    <vlen>$fft_len</vlen>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>complex</type>
+    <vlen>$fft_len</vlen>
+  </source>
+</block>
