@@ -144,6 +144,11 @@
       <key>"8-PSK"</key>
       <opt>bps:3</opt>
     </option>
+    <option>
+      <name>16-QAM</name>
+      <key>"16-QAM"</key>
+      <opt>bps:4</opt>
+    </option>
   </param>
   <param>
     <name>Rolloff length (samples)</name>
@@ -192,5 +197,10 @@
   <source>
     <name>out</name>
     <type>complex</type>
+  </source>
+  <source>
+    <name>Modulator output</name>
+    <type>complex</type>
+    <optional>1</optional>
   </source>
 </block>

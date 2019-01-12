@@ -1,0 +1,7 @@
+/*!
+ * \defgroup block GNU Radio GMU_CHUNKS_TO_SYMBOLS C++ Signal Processing Blocks
+ * \brief All C++ blocks that can be used from the GMU_CHUNKS_TO_SYMBOLS GNU Radio
+ *        module are listed here or in the subcategories below.
+ *
+ */
+

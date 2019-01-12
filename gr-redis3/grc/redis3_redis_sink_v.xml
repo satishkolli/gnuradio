@@ -1,0 +1,17 @@
+<block>
+  <name>Redis sink v</name>
+  <key>redis3_redis_sink_v</key>
+  <category>[REDIS3]</category>
+  <import>import redis3</import>
+  <make>redis3.redis_sink_v($msgsize)</make>
+  <param>
+    <name>Msgsize</name>
+    <key>msgsize</key>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+    <vlen>$msgsize</vlen>
+  </sink>
+</block>

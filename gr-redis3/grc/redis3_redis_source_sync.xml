@@ -1,0 +1,16 @@
+<block>
+  <name>Redis source sync</name>
+  <key>redis3_redis_source_sync</key>
+  <category>[REDIS3]</category>
+  <import>import redis3</import>
+  <make>redis3.redis_source_sync($msgsize)</make>
+  <param>
+    <name>Msgsize</name>
+    <key>msgsize</key>
+    <type>int</type>
+  </param>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>

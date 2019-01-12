@@ -1,0 +1,27 @@
+<block>
+  <name>Redis sink sync</name>
+  <key>redis3_redis_sink_sync</key>
+  <category>[REDIS3]</category>
+  <import>import redis3</import>
+  <make>redis3.redis_sink_sync($msgsize, $*channel, $redis_host)</make>
+  <param>
+    <name>Msgsize</name>
+    <key>msgsize</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Channel name</name>
+    <key>channel</key>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Redis Hostname or IP</name>
+    <key>redis_host</key>
+    <type>string</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+    <vlen>$msgsize</vlen>
+  </sink>
+</block>
