@@ -52,7 +52,7 @@ namespace gr {
        * \param lengthtagname Length tag key for the tagged stream.
        * \param packed If the data is packed or unpacked bits (default=true).
        */
-      static sptr make(bool check=false, const std::string& lengthtagname="packet_len", bool packed=true);
+      static sptr make(bool check=false, const std::string& lengthtagname="packet_len", bool packed=true, const std::string& metrics_prefix="gmu_radio_metrics");
     };
 
   } // namespace digital

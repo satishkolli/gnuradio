@@ -30,6 +30,7 @@ include_directories(
     ${GNURADIO_RUNTIME_INCLUDE_DIRS}
     ${VOLK_INCLUDE_DIRS}
     ${Boost_INCLUDE_DIRS}
+    /opt/cppmetrics/include
 )
 
 link_directories(${Boost_LIBRARY_DIRS})

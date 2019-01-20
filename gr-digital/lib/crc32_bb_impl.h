@@ -25,6 +25,11 @@
 
 #include <gnuradio/digital/crc32_bb.h>
 #include <boost/crc.hpp>
+#include <cppmetrics/cppmetrics.h>
+#include <cppmetrics/core/console_reporter.h>
+#include <cppmetrics/core/utils.h>
+#include "cppmetrics/graphite/graphite_reporter.h"
+#include "cppmetrics/graphite/graphite_sender_tcp.h"
 
 namespace gr {
   namespace digital {
@@ -36,11 +41,15 @@ namespace gr {
       bool d_packed;
       boost::crc_optimal<32, 0x04C11DB7, 0xFFFFFFFF, 0xFFFFFFFF, true, true>    d_crc_impl;
       int d_crc_length;
-      std::vector<char> d_buffer;
-      unsigned int calculate_crc32(const unsigned char* in, size_t packet_length);
+      char *d_unpacked_crc;
+      std::string metric_prefix_g;
+      cppmetrics::core::MetricRegistryPtr metric_registry; 
+      boost::scoped_ptr<cppmetrics::graphite::GraphiteReporter> graphite_reporter_;
+      
+      cppmetrics::graphite::GraphiteSenderPtr graphite_sender;
 
      public:
-      crc32_bb_impl(bool check, const std::string& lengthtagname, bool packed);
+      crc32_bb_impl(bool check, const std::string& lengthtagname, bool packed, const std::string& metrics_prefix);
       ~crc32_bb_impl();
 
       int calculate_output_stream_length(const gr_vector_int &ninput_items);
@@ -49,6 +58,8 @@ namespace gr {
 		       gr_vector_const_void_star &input_items,
 		       gr_vector_void_star &output_items);
 
+      uint64_t d_npass;
+      uint64_t d_nfail;
     };
 
   } // namespace digital
